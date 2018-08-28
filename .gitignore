@@ -1,0 +1,7 @@
+*.pyc
+.idea/
+test.json
+.DS_Store
+*.csv
+urls.txt
+eans.txt

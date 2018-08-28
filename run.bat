@@ -1,0 +1,2 @@
+scrapy crawl uae
+pause
