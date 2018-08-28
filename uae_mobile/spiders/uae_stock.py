@@ -2,6 +2,7 @@
 import scrapy
 import re
 import json
+import uuid
 from scrapy.http import Request, FormRequest
 from scrapy.shell import inspect_response
 from pprint import pprint
@@ -61,6 +62,7 @@ class UaeStockSpider(scrapy.Spider):
         x = 0
 
         try:
+            item['id'] = uuid.uuid4()
             item['seller'] = offers[x]['seller']['name']
             item['EAN'] = offers[x]['ean']
             item['price'] = offers[x]['price']

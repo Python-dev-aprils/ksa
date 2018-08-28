@@ -82,8 +82,8 @@ class WebcrawlerScrapyPipeline(object):
     #写入数据库中
     def _conditional_insert(self,tx,item):
         #print item['name']
-        sql="insert into testtable(seller,EAN,price,amount,image_url,handling_time_code) values(%s,%s,%s,%s,%s,%s)"
-        params=(item["seller"],item["EAN"],item["price"],item["amount"],item["image_url"],item["handling_time_code"])
+        sql="insert into collectionList(id,seller,EAN,price,amount,image_url,handling_time_code) values(%s,%s,%s,%s,%s,%s,%s)"
+        params=(item["id"],item["seller"],item["EAN"],item["price"],item["amount"],item["image_url"],item["handling_time_code"])
         tx.execute(sql,params)
 
     #错误处理方法

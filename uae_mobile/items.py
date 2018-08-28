@@ -11,10 +11,10 @@ import scrapy
 class UaeMobileItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
+    id = scrapy.Field()
     seller = scrapy.Field()
     EAN = scrapy.Field()
     price = scrapy.Field()
     amount = scrapy.Field()
     image_url = scrapy.Field()
     handling_time_code = scrapy.Field()
-

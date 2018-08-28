@@ -66,6 +66,6 @@ module.exports = function defineModel(name, attributes) {
     id++;
     return 'p' + id;
   }
-  gyx.sync({force: true});  //自动生成对应的表
+  // gyx.sync({force: true});  //自动生成对应的表
    return gyx
 }
