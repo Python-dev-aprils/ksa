@@ -18,3 +18,4 @@ class UaeMobileItem(scrapy.Item):
     amount = scrapy.Field()
     image_url = scrapy.Field()
     handling_time_code = scrapy.Field()
+    createdAt = scrapy.Field()

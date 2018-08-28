@@ -1,4 +1,4 @@
-const models = require('../models/collectionList');
+const models = require('../models/collectionUrl');
 //const superagent = require('superagent')
     /*function Product(x) {
         this.data = x;

@@ -31,15 +31,15 @@ module.exports = function defineModel(name, attributes) {
         primaryKey: true
     };
     attrs.createdAt = {
-        type: Sequelize.BIGINT,
+        type: Sequelize.STRING(50),
         allowNull: false
     };
     attrs.updatedAt = {
-        type: Sequelize.BIGINT,
+        type: Sequelize.STRING(50),
         allowNull: false
     };
     attrs.version = {
-        type: Sequelize.BIGINT,
+        type: Sequelize.STRING(50),
         allowNull: false
     };
    var  gyx =  sequelize.define(name, attrs, {

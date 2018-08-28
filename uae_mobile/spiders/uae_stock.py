@@ -3,6 +3,8 @@ import scrapy
 import re
 import json
 import uuid
+import datetime
+import time
 from scrapy.http import Request, FormRequest
 from scrapy.shell import inspect_response
 from pprint import pprint
@@ -69,6 +71,7 @@ class UaeStockSpider(scrapy.Spider):
             item['amount'] = offers[x]['available_quantity']
             item['image_url'] = offers[x]['product_images']["XL"][0]
             item['handling_time_code'] = offers[x]['handling_time_code']
+            item['createdAt'] = int(round(time.time() * 1000))
             yield item
         except IndexError:
             logger.error(u'=======商品下架=========')
