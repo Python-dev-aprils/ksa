@@ -8,6 +8,7 @@ var collectionUrl = User('collectionUrl', {
     primaryKey: true
   },
   url: Sequelize.STRING(100),
+  name: Sequelize.STRING(100),
 });
 
 module.exports = collectionUrl;

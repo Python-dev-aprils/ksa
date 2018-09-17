@@ -52,7 +52,9 @@ module.exports = function defineModel(name, attributes) {
                     if (!obj.id) {
                         obj.id = 'id'+Date.now();
                     }
-                    obj.createdAt = Date.now();
+                    if(name !== 'collectionListD'){
+                      obj.createdAt = Date.now();
+                    }
                     obj.updatedAt = Date.now();
                     obj.version = 0;
                 } else {

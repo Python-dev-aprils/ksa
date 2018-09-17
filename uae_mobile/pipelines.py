@@ -30,7 +30,7 @@ class UaeMobilePipeline(object):
         file = open(filename, 'wb')
         self.files[spider] = file
         self.exporter = CsvItemExporter(file)
-        self.exporter.fields_to_export = ['seller', 'EAN', 'price', 'amount', 'handling_time_code', 'image_url']
+        self.exporter.fields_to_export = ['seller', 'EAN', 'price','type', 'amount', 'followNum', 'image_url']
         self.exporter.start_exporting()
 
     def spider_closed(self, spider):
@@ -82,8 +82,8 @@ class WebcrawlerScrapyPipeline(object):
     #写入数据库中
     def _conditional_insert(self,tx,item):
         #print item['name']
-        sql="insert into collectionList(id,seller,EAN,price,amount,image_url,handling_time_code,createdAt) values(%s,%s,%s,%s,%s,%s,%s,%s)"
-        params=(item["id"],item["seller"],item["EAN"],item["price"],item["amount"],item["image_url"],item["handling_time_code"],item["createdAt"])
+        sql="insert into collectionList(id,seller,EAN,price,type,amount,image_url,followNum,reviews_count,fulfilled_by_souq,createdAt) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+        params=(item["id"],item["seller"],item["EAN"],item["price"],item["type"],item["amount"],item["image_url"],item["followNum"],item["reviews_count"],item["fulfilled_by_souq"],item["createdAt"])
         tx.execute(sql,params)
 
     #错误处理方法

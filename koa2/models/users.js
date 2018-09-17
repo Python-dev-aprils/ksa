@@ -1,7 +1,7 @@
 
 //var databaseJson = require('./petsData');
 const Sequelize = require('sequelize');
-const User = require('../config/db'); 
+const User = require('../config/db');
 var users = User('users', {
   id: {
     type: Sequelize.STRING(50),
